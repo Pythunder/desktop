@@ -49,7 +49,6 @@ import {
   resetPaths,
   revertCommit,
   unstageAllFiles,
-  openMergeTool,
   addRemote,
   listSubmodules,
   resetSubmodulePaths,
@@ -1260,13 +1259,15 @@ export class GitStore extends BaseStore {
   }
 
   /** Changes the URL for the remote that matches the given name  */
-  public async setRemoteURL(name: string, url: string): Promise<void> {
-    await this.performFailableOperation(() =>
-      setRemoteURL(this.repository, name, url)
-    )
+  public async setRemoteURL(name: string, url: string): Promise<boolean> {
+    const wasSuccessful =
+      (await this.performFailableOperation(() =>
+        setRemoteURL(this.repository, name, url)
+      )) === true
     await this.loadRemotes()
 
     this.emitUpdate()
+    return wasSuccessful
   }
 
   public async discardChanges(
@@ -1363,12 +1364,6 @@ export class GitStore extends BaseStore {
     )
 
     this.emitUpdate()
-  }
-
-  public async openMergeTool(path: string): Promise<void> {
-    await this.performFailableOperation(() =>
-      openMergeTool(this.repository, path)
-    )
   }
 
   /**
