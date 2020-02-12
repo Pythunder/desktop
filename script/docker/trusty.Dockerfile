@@ -19,7 +19,6 @@ RUN apt-get install --quiet --yes \
     libxss1 \
     libgconf-2-4 \
     libasound2 \
-    unzip \
     xvfb
 
 # ensure we are running a recent version of Git
