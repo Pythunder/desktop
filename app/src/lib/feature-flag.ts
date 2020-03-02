@@ -115,3 +115,19 @@ export function enableTutorial(): boolean {
 export function enableCreateForkFlow(): boolean {
   return true
 }
+
+/**
+ * Whether or not to enable support for automatically resolving the
+ * system-configured proxy url and passing that to Git.
+ */
+export function enableAutomaticGitProxyConfiguration(): boolean {
+  return enableDevelopmentFeatures()
+}
+
+/**
+ * Should we show the "Create Issue on GitHub" item under
+ * "Repository" in the app menu?
+ */
+export function enableCreateGitHubIssueFromMenu(): boolean {
+  return enableBetaFeatures()
+}
