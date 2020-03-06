@@ -1,8 +1,6 @@
 # [GitHub Desktop](https://desktop.github.com) - The Linux Fork
 
-[![Travis](https://img.shields.io/travis/shiftkey/desktop.svg?style=flat-square&label=Travis+CI)](https://travis-ci.org/shiftkey/desktop)
-[![Azure DevOps Pipelines Build Status](https://dev.azure.com/github/Desktop/_apis/build/status/Continuous%20Integration)](https://dev.azure.com/github/Desktop/_build/latest?definitionId=3)
-[![GitHub Desktop](https://snapcraft.io/github-desktop/badge.svg)](https://snapcraft.io/github-desktop)
+[![Build Status](https://brendanforster.visualstudio.com/desktop-linux/_apis/build/status/Azure%20Pipelines%20Build?branchName=linux)](https://brendanforster.visualstudio.com/desktop-linux/_build/latest?definitionId=10&branchName=linux)
 [![license](https://img.shields.io/github/license/desktop/desktop.svg?style=flat-square)](https://github.com/desktop/desktop/blob/development/LICENSE)
 ![90+% TypeScript](https://img.shields.io/github/languages/top/desktop/desktop.svg?style=flat-square&colorB=green)
 
@@ -22,28 +20,9 @@ It also hosts preview packages for various Linux distributions:
  - AppImage (`.AppImage`)
  - Debian (`.deb`)
  - RPM (`.rpm`)
- - Snap (`.snap`) - also available from [snapcraft.io](https://snapcraft.io/github-desktop)
 
 Check out the [latest releases](https://github.com/shiftkey/desktop/releases) to
 help out with testing on your distribution.
-
-### Snapcraft Store
-
-We are currently testing out a new version of the Snap that requires using the
-`classic` enclosure, as GitHub Desktop has integrations to launch your chosen
-shell or editor which are not supported in the `strict` enclosure.
-
-**If you are currently running the Snap installed from `edge`**
-
-You will be prompted to manually upgrade to the `beta` channel as an installed
-application cannot upgrade it's enclosure via an update.
-
-To upgrade manually, run these commands:
-
-```
-$ snap remove github-desktop
-$ snap install github-desktop --beta --classic
-```
 
 ## Other Distributions
 
