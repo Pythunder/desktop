@@ -141,3 +141,17 @@ export function enableAutomaticGitProxyConfiguration(): boolean {
 export function enableCreateGitHubIssueFromMenu(): boolean {
   return enableBetaFeatures()
 }
+
+/**
+ * Should we update remote url if it has changed?
+ */
+export function enableUpdateRemoteUrl(): boolean {
+  return enableBetaFeatures()
+}
+/**
+ * Should we show the fork-specific, "branch from the upstream
+ * default branch" version of the create branch dialog?
+ */
+export function enableForkyCreateBranchUI(): boolean {
+  return enableBetaFeatures()
+}
