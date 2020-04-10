@@ -21,6 +21,10 @@ function enableDevelopmentFeatures(): boolean {
   return false
 }
 
+export function enableProgressBarOnIcon(): boolean {
+  return enableDevelopmentFeatures()
+}
+
 /** Should the app enable beta features? */
 //@ts-ignore: this will be used again in the future
 function enableBetaFeatures(): boolean {
@@ -155,4 +159,11 @@ export function enableUpdateRemoteUrl(): boolean {
  */
 export function enableForkyCreateBranchUI(): boolean {
   return true
+}
+
+/**
+ * Should we show the git tag information in the app UI?
+ */
+export function enableGitTagsDisplay(): boolean {
+  return enableDevelopmentFeatures()
 }
